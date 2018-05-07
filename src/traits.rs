@@ -2,7 +2,7 @@ pub trait Shape {
     fn render(&self);
 }
 
-pub trait Material:Sync {
+pub trait Material:Sync+Send {
      fn render(&self);
 }
 

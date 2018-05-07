@@ -5,11 +5,11 @@ use Material;
 use Shape;
 pub struct Sphere {
     pub radius: f32,
-    pub material: Box<Material+Send>
+    pub material: Box<Material>
 }
 
 impl Sphere {
-    pub fn new(radius: f32, material: Box<Material+Send> ) -> Sphere {
+    pub fn new(radius: f32, material: Box<Material> ) -> Sphere {
         Sphere { radius, material }
     }
 }
