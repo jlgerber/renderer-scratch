@@ -1,19 +1,18 @@
 use Material;
+use Texture;
 
 pub struct Lambert {
-    pub r: u8,
-    pub g: u8,
-    pub b: u8,
+   pub texture: Box<Texture>
 }
 
 impl Lambert {
-    pub fn new(r: u8, g: u8, b:u8) -> Lambert {
-        Lambert {r, g, b }
+    pub fn new(texture: Box<Texture> ) -> Lambert {
+        Lambert {texture }
     }
 }
 
 impl Material for Lambert {
-    fn render(&self) {
-        print!("material: Lambert r:{} g:{} b:{}", self.r, self.g, self.b)
+    fn render(&self) -> String {
+        format!("Lambert {}", self.texture.render())
     }
 }

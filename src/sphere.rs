@@ -1,6 +1,4 @@
-use std::{
-    sync::Arc,
-};
+
 use Material;
 use Shape;
 pub struct Sphere {
@@ -15,9 +13,7 @@ impl Sphere {
 }
 
 impl Shape for Sphere {
-    fn render(&self) {
-        print!("sphere radius: {}",self.radius);
-        self.material.render();
-        println!("");
+    fn render(&self) -> String {
+       format!("sphere radius: {} material: {}",self.radius, self.material.render())
     }
 }

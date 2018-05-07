@@ -1,6 +1,7 @@
 pub mod traits;
 pub mod sphere;
 pub mod lambert;
+pub mod constant;
 pub mod threadpool;
 mod worker;
 mod message;
@@ -9,3 +10,4 @@ pub use threadpool::*;
 pub use sphere::*;
 pub use traits::*;
 pub use lambert::*;
+pub use constant::*;

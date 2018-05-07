@@ -1,13 +1,13 @@
 pub trait Shape {
-    fn render(&self);
+    fn render(&self) -> String;
 }
 
 pub trait Material:Sync+Send {
-     fn render(&self);
+     fn render(&self) -> String;
 }
 
-pub trait Texture {
-     fn render(&self);
+pub trait Texture:Sync+Send {
+     fn render(&self) -> String;
 }
 
 
