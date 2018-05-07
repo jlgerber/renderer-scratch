@@ -5,7 +5,7 @@ use std::{
 };
 
 fn main() {
-    let mat = Arc::new(Lambert::new(200,200,200));
+    let mat = Box::new(Lambert::new(200,200,200));
     let sphere = Arc::new(Sphere::new(2.0, mat));
     //sphere.render();
 
