@@ -1,5 +1,8 @@
+use HitRecord;
+
 pub trait Shape:Sync+Send {
     fn render(&self) -> String;
+    fn hit(&self, hit_record: &mut HitRecord);
 }
 
 pub trait Material:Sync+Send {
