@@ -1,4 +1,4 @@
-pub trait Shape {
+pub trait Shape:Sync+Send {
     fn render(&self) -> String;
 }
 

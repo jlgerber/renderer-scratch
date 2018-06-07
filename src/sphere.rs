@@ -1,18 +1,18 @@
 
 use Material;
 use Shape;
-pub struct Sphere {
+pub struct Sphere<'a> {
     pub radius: f32,
-    pub material: Box<Material>
+    pub material: &'a Box<Material>
 }
 
-impl Sphere {
-    pub fn new(radius: f32, material: Box<Material> ) -> Sphere {
+impl<'a> Sphere<'a> {
+    pub fn new(radius: f32, material: &'a Box<Material> ) -> Sphere {
         Sphere { radius, material }
     }
 }
 
-impl Shape for Sphere {
+impl<'a> Shape for Sphere<'a> {
     fn render(&self) -> String {
        format!("sphere radius: {} material: {}",self.radius, self.material.render())
     }
