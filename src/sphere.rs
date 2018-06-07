@@ -14,12 +14,12 @@ impl<'a> Sphere<'a> {
     }
 }
 
-impl<'a> Shape for Sphere<'a> {
+impl<'a> Shape<'a> for Sphere<'a> {
     fn render(&self) -> String {
        format!("sphere radius: {} material: {}",self.radius, self.material.render())
     }
 
-    fn hit(&self, hit_record: &mut HitRecord) {
+    fn hit(&self, hit_record: &mut HitRecord<'a>) {
         hit_record.material = Some(self.material);
     }
 

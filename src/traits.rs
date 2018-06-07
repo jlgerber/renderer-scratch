@@ -1,15 +1,15 @@
 use HitRecord;
 
-pub trait Shape:Sync+Send {
+pub trait Shape<'a>: Sync + Send {
     fn render(&self) -> String;
-    fn hit(&self, hit_record: &mut HitRecord);
+    fn hit(&self, hit_record: &mut HitRecord<'a>);
 }
 
-pub trait Material:Sync+Send {
+pub trait Material: Sync + Send {
      fn render(&self) -> String;
 }
 
-pub trait Texture:Sync+Send {
+pub trait Texture: Sync + Send {
      fn render(&self) -> String;
 }
 
